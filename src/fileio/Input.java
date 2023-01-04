@@ -11,8 +11,6 @@ public class Input {
     private ArrayList<MovieInput> movies;
     private ArrayList<ActionInput> actions;
 
-//    private HashMap<String, ArrayList<String>> databaseNotifications = new HashMap<String, ArrayList<String>>();
-
     public Input() {
 
     }
@@ -22,10 +20,6 @@ public class Input {
         this.users = users;
         this.movies = movies;
         this.actions = actions;
-
-//        for (UserInput user : users) {
-//            databaseNotifications.put(user.getCredentials().getName(), new ArrayList<String>());
-//        }
     }
 
     /**
@@ -102,7 +96,13 @@ public class Input {
         return null;
     }
 
+    /**
+     * Verify if a movie exists in the databse
+     * @param newMovieTitle title of the movie
+     * @return true/false
+     */
     public boolean findMovie(final String newMovieTitle) {
+
         for (MovieInput movie : movies) {
             if (movie.getName().compareTo(newMovieTitle) == 0) {
                 return true;
@@ -111,6 +111,10 @@ public class Input {
         return false;
     }
 
+    /**
+     * Delete a movie from the database
+     * @param movieTitle title of the movie that I want to delete
+     */
     public void deleteMovie(final String movieTitle) {
 
         for (int i = 0; i < movies.size(); i++) {
@@ -122,15 +126,11 @@ public class Input {
         }
     }
 
-//    public HashMap<String, ArrayList<String>> getDatabaseNotifications() {
-//        return databaseNotifications;
-//    }
-//
-//    public void setDatabaseNotifications(final HashMap<String, ArrayList<String>> databaseNotifications) {
-//        this.databaseNotifications = databaseNotifications;
-//    }
-
-    public void addMovie(MovieInput newMovie) {
+    /**
+     * Add a movie to the database
+     * @param newMovie new movie
+     */
+    public void addMovie(final MovieInput newMovie) {
         this.movies.add(newMovie);
     }
 }

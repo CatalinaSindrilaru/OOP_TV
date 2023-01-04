@@ -11,9 +11,10 @@ public class ActionFactory {
      * @return object that implements interface ActionPage
      */
     public ActionPage createAction(final String type) {
+
         if (type.compareTo("change page") == 0) {
             return new ChangePage();
-        } else if (type.compareTo("on page") == 0){
+        } else if (type.compareTo("on page") == 0) {
             return new OnPage();
         } else if (type.compareTo("database") == 0) {
             return new DatabaseAction();

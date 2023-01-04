@@ -25,7 +25,7 @@ public class WatchEvent implements Event {
                           final Input input, final ArrayNode output) {
 
         if (currentPage.getPageName().compareTo("see details") == 0) {
-            // verific daca filmul a fost cumparat mai intai de user
+
             MovieInput movie = currentPage.getCurrentMovieList().get(0);
 
             if (currentPage.getCurrentUser() != null

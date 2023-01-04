@@ -22,12 +22,14 @@ public class MovieInput {
     private float rating = 0;
     /* Number of ratings provided by users*/
     private int numRatings = 0;
-    /* Sum of the ratings provided by all the users*/
-//    private int sumRatings = 0;
 
     private HashMap<String, Integer> ratings = new HashMap<>();
 
-    public MovieInput(MovieInput movieInput) {
+    /**
+     * Copy constructor
+     * @param movieInput movie that I want to copy
+     */
+    public MovieInput(final MovieInput movieInput) {
         this.name = movieInput.getName();
         this.year = movieInput.getYear();
         this.duration = movieInput.getDuration();
@@ -37,7 +39,6 @@ public class MovieInput {
         this.numLikes = movieInput.getNumLikes();
         this.rating = movieInput.getRating();
         this.numRatings = movieInput.getNumRatings();
-//        this.sumRatings = movieInput.getSumRatings();
         this.ratings = new HashMap<>();
         this.ratings.putAll(movieInput.getRatings());
     }
@@ -184,28 +185,24 @@ public class MovieInput {
     }
 
     /**
-     * @return sumRatings
+     * @return hashmap for ratings
      */
-//    public int getSumRatings() {
-//        return sumRatings;
-//    }
-
-    /**
-     * @param sumRatings new value
-     */
-//    public void setSumRatings(final int sumRatings) {
-//        this.sumRatings = sumRatings;
-//    }
-
-
     public HashMap<String, Integer> getRatings() {
         return ratings;
     }
 
-    public void setRatings(HashMap<String, Integer> ratings) {
+    /**
+     * @param ratings new value
+     */
+    public void setRatings(final HashMap<String, Integer> ratings) {
         this.ratings = ratings;
     }
 
+    /**
+     * Verify if a user is banned for a movie
+     * @param user user to verify
+     * @return true/false
+     */
     public boolean bannedForUser(UserInput user) {
         String country = user.getCredentials().getCountry();
         return countriesBanned.contains(country);

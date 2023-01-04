@@ -31,7 +31,7 @@ public class LoginEvent implements Event {
                 currentPage.setPageName("Homepage autentificat");
                 currentPage.clearCurrentMoviesList();
                 DisplayCommand.writeInOutput(output, currentPage);
-                currentPage.getOldPages().push(new CurrentPage(currentPage));;
+                currentPage.getOldPages().push(new CurrentPage(currentPage));
 
             } else {
                 /* If the user doesn't exist in the database */

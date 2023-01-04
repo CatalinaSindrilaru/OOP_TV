@@ -28,13 +28,8 @@ public class SearchEvent implements Event {
 
         if (currentPage.getPageName().compareTo("movies") == 0) {
 
-//            MovieInput movie = currentPage.findMovie(actionInput.getStartsWith());
-//            currentPage.clearCurrentMoviesList();
-//
-//            if (movie != null) {
-//                currentPage.getCurrentMovieList().add(movie);
-//            }
-            ArrayList<MovieInput> moviesFound = currentPage.searchByPrefix(actionInput.getStartsWith());
+            ArrayList<MovieInput> moviesFound
+                    = currentPage.searchByPrefix(actionInput.getStartsWith());
             currentPage.clearCurrentMoviesList();
             currentPage.getCurrentMovieList().addAll(moviesFound);
 

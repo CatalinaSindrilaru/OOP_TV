@@ -35,10 +35,6 @@ public class RateEvent implements Event {
             if (currentPage.getCurrentUser() != null
                     && currentPage.getCurrentUser().watchedMovie(movie)) {
 
-//                if (currentPage.getCurrentUser().getRatedMovies().contains(movie)) {
-//                    DisplayCommand.writeInOutput(output, currentPage);
-//                    return;
-//                }
                 int rate = actionInput.getRate();
                 if (rate > MAX_RATE) {
                     ErrorDisplay.displayError(output);
@@ -46,44 +42,28 @@ public class RateEvent implements Event {
                 }
 
                 /* Update the sum and num for rating */
-//                int oldSumRatings = movie.getSumRatings();
                 HashMap<String, Integer> ratings = movie.getRatings();
                 int oldNumRatings = movie.getNumRatings();
 
-//                movie.setSumRatings(oldSumRatings + rate);
                 if (!ratings.containsKey(currentPage.getCurrentUser().getCredentials().getName())) {
                     movie.setNumRatings(oldNumRatings + 1);
                     currentPage.getCurrentUser().addAtRatedMovies(movie);
                 }
 
-                /* Calculate again */
-//                float newRating = (float) movie.getSumRatings() / movie.getNumRatings();
                 ratings.put(currentPage.getCurrentUser().getCredentials().getName(), rate);
-                // calculate the sum
                 int sum = 0;
                 for (Map.Entry<String, Integer> entry : ratings.entrySet()) {
                     sum += entry.getValue();
                 }
-                float newRating = (float)sum / movie.getNumRatings();
+                float newRating = (float) sum / movie.getNumRatings();
                 movie.setRating(newRating);
 
-//                currentPage.getCurrentUser().addAtRatedMovies(movie);
                 DisplayCommand.writeInOutput(output, currentPage);
 
             } else {
-//                int rate = actionInput.getRate();
-//                if (rate > MAX_RATE) {
-//                    ErrorDisplay.displayError(output);
-////                    return;
-//                }
                 ErrorDisplay.displayError(output);
             }
         } else {
-//            int rate = actionInput.getRate();
-//            if (rate > MAX_RATE) {
-//                ErrorDisplay.displayError(output);
-////                    return;
-//            }
             ErrorDisplay.displayError(output);
         }
     }

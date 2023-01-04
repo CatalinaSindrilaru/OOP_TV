@@ -2,7 +2,6 @@ package fileio;
 
 import approach.actionPage.Notification;
 
-import java.net.NoRouteToHostException;
 import java.util.ArrayList;
 
 /**
@@ -54,18 +53,20 @@ public class UserInput {
         this.ratedMovies = ratedMovies;
     }
 
-    public UserInput(UserInput userInput) {
-
-            this.credentials = new Credentials(userInput.getCredentials());
-            this.tokensCount = userInput.getTokensCount();
-            this.numFreePremiumMovies = userInput.getNumFreePremiumMovies();
-            this.purchasedMovies = new ArrayList<>(userInput.getPurchasedMovies());
-            this.watchedMovies = new ArrayList<>(userInput.getWatchedMovies());
-            this.likedMovies = new ArrayList<>(userInput.getLikedMovies());
-            this.ratedMovies = new ArrayList<>(userInput.getRatedMovies());
-            this.notifications = new ArrayList<>(userInput.getNotifications());
-            this.subscribedGenres = new ArrayList<>(userInput.getSubscribedGenres());
-
+    /**
+     * Copy Constructor
+     * @param userInput which user I want to copy
+     */
+    public UserInput(final UserInput userInput) {
+        this.credentials = new Credentials(userInput.getCredentials());
+        this.tokensCount = userInput.getTokensCount();
+        this.numFreePremiumMovies = userInput.getNumFreePremiumMovies();
+        this.purchasedMovies = new ArrayList<>(userInput.getPurchasedMovies());
+        this.watchedMovies = new ArrayList<>(userInput.getWatchedMovies());
+        this.likedMovies = new ArrayList<>(userInput.getLikedMovies());
+        this.ratedMovies = new ArrayList<>(userInput.getRatedMovies());
+        this.notifications = new ArrayList<>(userInput.getNotifications());
+        this.subscribedGenres = new ArrayList<>(userInput.getSubscribedGenres());
     }
 
     /**
@@ -231,27 +232,47 @@ public class UserInput {
         return false;
     }
 
+    /**
+     * @return notifications
+     */
     public ArrayList<Notification> getNotifications() {
         return notifications;
     }
 
-    public void setNotifications(ArrayList<Notification> notifications) {
+    /**
+     * @param notifications new value
+     */
+    public void setNotifications(final ArrayList<Notification> notifications) {
         this.notifications = notifications;
     }
 
+    /**
+     * @return subscribedGenres
+     */
     public ArrayList<String> getSubscribedGenres() {
         return subscribedGenres;
     }
 
-    public void setSubscribedGenres(ArrayList<String> subscribedGenres) {
+    /**
+     * @param subscribedGenres new value
+     */
+    public void setSubscribedGenres(final ArrayList<String> subscribedGenres) {
         this.subscribedGenres = subscribedGenres;
     }
 
-    public void addNotification(Notification notification) {
+    /**
+     * Add a notification to the array of notifications
+     * @param notification new notification
+     */
+    public void addNotification(final Notification notification) {
         this.notifications.add(notification);
     }
 
-    public void addSubscribedGenre(String genre) {
+    /**
+     * Add a genre to the array of subscribed genres
+     * @param genre new genre
+     */
+    public void addSubscribedGenre(final String genre) {
         this.subscribedGenres.add(genre);
     }
 

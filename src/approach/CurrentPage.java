@@ -23,35 +23,15 @@ public final class CurrentPage {
 
     private Stack<CurrentPage> oldPages;
 
-//    private static CurrentPage instance = null;
-
     public CurrentPage() {
         oldPages = new Stack<CurrentPage>();
     }
 
-//    /**
-//     * Returns the instance of a CurrentPage class (Singleton)
-//     * @return CurrentPage instance
-//     */
-//    public static CurrentPage getInstance() {
-//        if (instance == null) {
-//
-//            instance = new CurrentPage();
-//        }
-//
-//        return instance;
-//    }
-
     public CurrentPage(CurrentPage currentPage) {
         this.pageName = currentPage.getPageName();
-//        if (currentPage.currentUser != null) {
-//            this.currentUser = new UserInput(currentPage.currentUser);
-//        } else {
-//            this.currentUser = null;
-//        }
         this.currentUser = currentPage.currentUser;
         this.currentMovieList = new ArrayList<>(currentPage.getCurrentMovieList());
-       this.oldPages = (Stack<CurrentPage>) currentPage.getOldPages().clone();
+        this.oldPages = (Stack<CurrentPage>) currentPage.getOldPages().clone();
     }
 
     /**
@@ -171,6 +151,11 @@ public final class CurrentPage {
         return null;
     }
 
+    /**
+     * Find all the movies that begins with the given prefix
+     * @param prefix given string
+     * @return ArrayList<MovieInput>
+     */
     public ArrayList<MovieInput> searchByPrefix(final String prefix) {
 
         ArrayList<MovieInput> movies = new ArrayList<>();
@@ -185,6 +170,9 @@ public final class CurrentPage {
         return movies;
     }
 
+    /**
+     * @return oldPages
+     */
     public Stack<CurrentPage> getOldPages() {
         return oldPages;
     }

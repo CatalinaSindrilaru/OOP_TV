@@ -22,7 +22,7 @@ public class ChangePage implements ActionPage {
      * @param actionInput action information
      * @param input       information about users, movies, actions
      * @param output      final ArrayNode in which must be added
-     * @return
+     * @return current page
      */
     @Override
     public CurrentPage resolveCommand(final CurrentPage currentPage, final ActionInput actionInput,
@@ -64,12 +64,11 @@ public class ChangePage implements ActionPage {
         if (actionInput.getPage().compareTo("logout") == 0) {
             currentPage.setCurrentUser(null);
             currentPage.setPageName("Homepage neautentificat");
-            // + golire stiva
             currentPage.getOldPages().clear();
             return currentPage;
         }
 
-        if (actionInput.getPage().compareTo("movies") == 0) { // permis din autentificat, mvies, upgrades, see details
+        if (actionInput.getPage().compareTo("movies") == 0) {
             if (currentPage.getPageName().compareTo("Homepage autentificat") == 0
                     || currentPage.getPageName().compareTo("see details") == 0
                     || currentPage.getPageName().compareTo("movies") == 0
@@ -90,7 +89,7 @@ public class ChangePage implements ActionPage {
             if (currentPage.getPageName().compareTo("Homepage autentificat") == 0
                     || currentPage.getPageName().compareTo("see details") == 0
                     || currentPage.getPageName().compareTo("movies") == 0
-                    || currentPage.getPageName().compareTo("upgrades") == 0) { // + din movies + din upgrades  // fara din autentificat
+                    || currentPage.getPageName().compareTo("upgrades") == 0) {
 
                 currentPage.setPageName(actionInput.getPage());
                 currentPage.getOldPages().push(new CurrentPage(currentPage));
@@ -101,7 +100,7 @@ public class ChangePage implements ActionPage {
         }
 
 
-        if (actionInput.getPage().compareTo("see details") == 0) {   // permis din movies si din see details
+        if (actionInput.getPage().compareTo("see details") == 0) {
             if (currentPage.getPageName().compareTo("movies") == 0
                     || currentPage.getPageName().compareTo("see details") == 0) {
 
@@ -112,7 +111,6 @@ public class ChangePage implements ActionPage {
                     MovieInput movie = currentPage.findMovie(actionInput.getMovie());
                     if (movie == null) {
                         ErrorDisplay.displayError(output);
-//                        currentPage.getOldPages().push(new CurrentPage(currentPage)); // adaugat
 
                     } else {
                         currentPage.clearCurrentMoviesList();

@@ -11,8 +11,18 @@ import fileio.UserInput;
 import java.util.ArrayList;
 
 public class DatabaseAction implements ActionPage {
+
+    /**
+     *
+     * @param currentPage the current page I'm on
+     * @param actionInput action information
+     * @param input information about users, movies, actions
+     * @param output final ArrayNode in which must be added
+     * @return current page
+     */
     @Override
-    public CurrentPage resolveCommand(CurrentPage currentPage, ActionInput actionInput, Input input, ArrayNode output) {
+    public CurrentPage resolveCommand(final CurrentPage currentPage, final ActionInput actionInput,
+                                      final Input input, final ArrayNode output) {
 
         if (actionInput.getFeature().compareTo("add") == 0) {
             MovieInput newMovie = actionInput.getAddedMovie();
@@ -21,7 +31,7 @@ public class DatabaseAction implements ActionPage {
                 ErrorDisplay.displayError(output);
             } else {
                 input.addMovie(newMovie);
-                // + notifcare subscriberi
+
                 ArrayList<String> movieGenres = newMovie.getGenres();
 
                 ArrayList<UserInput> users = input.getUsers();
@@ -53,7 +63,6 @@ public class DatabaseAction implements ActionPage {
 
             if (input.findMovie(movieTitle)) {
                 input.deleteMovie(movieTitle);
-                // notificare + primire inapoi resurse
 
                 ArrayList<UserInput> users = input.getUsers();
                 for (UserInput user : users) {
@@ -86,9 +95,8 @@ public class DatabaseAction implements ActionPage {
 
 
             } else {
-                ErrorDisplay.displayError(output); // daca vrem sa stergem un film care nu exista
+                ErrorDisplay.displayError(output);
             }
-            // delete
         }
         return currentPage;
     }

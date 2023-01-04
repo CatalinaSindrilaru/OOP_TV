@@ -11,7 +11,11 @@ public class Credentials {
     private String country;
     private String balance;
 
-    public Credentials(Credentials credentials) {
+    /**
+     * Copy constructor
+     * @param credentials credentials that I want to copy
+     */
+    public Credentials(final Credentials credentials) {
         this.name = credentials.getName();
         this.password = credentials.getPassword();
         this.accountType = credentials.getAccountType();

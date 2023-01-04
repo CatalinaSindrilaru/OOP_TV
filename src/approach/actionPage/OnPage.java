@@ -19,7 +19,7 @@ public class OnPage implements ActionPage {
      * @param actionInput action information
      * @param input       information about users, movies, actions
      * @param output      final ArrayNode in which must be added
-     * @return
+     * @return current page
      */
     @Override
     public CurrentPage resolveCommand(final CurrentPage currentPage, final ActionInput actionInput,

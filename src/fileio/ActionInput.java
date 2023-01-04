@@ -25,26 +25,11 @@ public class ActionInput {
 
     }
 
-//    public ActionInput(final String type, final String page, final String feature,
-//                       final FiltersInput filters, final Credentials credentials,
-//                       final String startsWith, final int count, final int rate,
-//                       final String movie) {
-//        this.type = type;
-//        this.page = page;
-//        this.feature = feature;
-//        this.filters = filters;
-//        this.credentials = credentials;
-//        this.startsWith = startsWith;
-//        this.count = count;
-//        this.rate = rate;
-//        this.movie = movie;
-//    }
-
-
-    public ActionInput(String type, String page, String feature, FiltersInput filters,
-                       Credentials credentials, String startsWith, int count, int rate,
-                       String movie, String subscribedGenre, String deletedMovie,
-                       MovieInput addedMovie) {
+    public ActionInput(final String type, final String page, final String feature,
+                       final FiltersInput filters, final Credentials credentials,
+                       final String startsWith, final int count, final int rate,
+                       final String movie, final String subscribedGenre,
+                       final String deletedMovie, final MovieInput addedMovie) {
         this.type = type;
         this.page = page;
         this.feature = feature;
@@ -189,23 +174,38 @@ public class ActionInput {
         return subscribedGenre;
     }
 
-    public void setSubscribedGenre(String subscribedGenre) {
+    /**
+     * @param subscribedGenre new value
+     */
+    public void setSubscribedGenre(final String subscribedGenre) {
         this.subscribedGenre = subscribedGenre;
     }
 
+    /**
+     * @return deletedMovie
+     */
     public String getDeletedMovie() {
         return deletedMovie;
     }
 
-    public void setDeletedMovie(String deletedMovie) {
+    /**
+     * @param deletedMovie new value
+     */
+    public void setDeletedMovie(final String deletedMovie) {
         this.deletedMovie = deletedMovie;
     }
 
+    /**
+     * @return addedMovie
+     */
     public MovieInput getAddedMovie() {
         return addedMovie;
     }
 
-    public void setAddedMovie(MovieInput addedMovie) {
+    /**
+     * @param addedMovie new value
+     */
+    public void setAddedMovie(final MovieInput addedMovie) {
         this.addedMovie = addedMovie;
     }
 }

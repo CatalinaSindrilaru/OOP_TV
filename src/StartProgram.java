@@ -1,8 +1,8 @@
 import approach.actionPage.ActionFactory;
 import approach.actionPage.ActionPage;
 import approach.CurrentPage;
+import approach.actionPage.Recommendation;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import displays.ErrorDisplay;
 import fileio.ActionInput;
 import fileio.Input;
 
@@ -52,28 +52,21 @@ public final class StartProgram {
                 actionPage = actionFactory.createAction("change page");
                 currentPage = actionPage.resolveCommand(currentPage, action, input, output);
 
-            } else if (action.getType().compareTo("on page") == 0){
+            } else if (action.getType().compareTo("on page") == 0) {
                 actionPage = actionFactory.createAction("on page");
                 currentPage = actionPage.resolveCommand(currentPage, action, input, output);
 
             } else if (action.getType().compareTo("database") == 0) {
                 actionPage = actionFactory.createAction("database");
                 currentPage = actionPage.resolveCommand(currentPage, action, input, output);
-            }
-            else {
-                // back
+            } else {
                 actionPage = actionFactory.createAction("back");
                 currentPage = actionPage.resolveCommand(currentPage, action, input, output);
-
                 currentPage.getOldPages().push(new CurrentPage(currentPage));
             }
-
-
         }
 
-//        if (5 > 3) {
-//            System.out.println("okkk");
-//        }
+        Recommendation.addRecommendation(input, currentPage, output);
     }
 
 }

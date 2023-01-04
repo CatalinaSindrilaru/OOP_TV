@@ -5,10 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.Credentials;
-import fileio.Input;
 import fileio.UserInput;
-
-import java.text.Normalizer;
 import java.util.ArrayList;
 
 public final class FormCurrentUser {
@@ -31,8 +28,6 @@ public final class FormCurrentUser {
         ArrayNode watchedMovies = FormMoviesList.moviesListFormed(user.getWatchedMovies());
         ArrayNode likedMovie = FormMoviesList.moviesListFormed(user.getLikedMovies());
         ArrayNode ratedMovie = FormMoviesList.moviesListFormed(user.getRatedMovies());
-
-//        ArrayList<String> notifications = user.getDatabaseNotifications().get(user.getCredentials().getName());
         ArrayList<Notification> notifications = user.getNotifications();
         ArrayNode notificationsArrayNode = notificationsFormed(notifications);
 
@@ -66,7 +61,12 @@ public final class FormCurrentUser {
         return credentialsObjectNode;
     }
 
-    private static ArrayNode notificationsFormed(ArrayList<Notification> notifications) {
+    /**
+     * Put the notifications for a user in the appropriate form to be displayed
+     * @param notifications notifications for a user
+     * @return ArrayNode
+     */
+    private static ArrayNode notificationsFormed(final ArrayList<Notification> notifications) {
         ObjectMapper mapper = new ObjectMapper();
         ArrayNode notificationsArrayNode = mapper.createArrayNode();
 
