@@ -79,11 +79,11 @@ public class RateEvent implements Event {
                 ErrorDisplay.displayError(output);
             }
         } else {
-            int rate = actionInput.getRate();
-            if (rate > MAX_RATE) {
-                ErrorDisplay.displayError(output);
-//                    return;
-            }
+//            int rate = actionInput.getRate();
+//            if (rate > MAX_RATE) {
+//                ErrorDisplay.displayError(output);
+////                    return;
+//            }
             ErrorDisplay.displayError(output);
         }
     }

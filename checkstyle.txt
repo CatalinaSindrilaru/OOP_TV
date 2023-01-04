@@ -7,6 +7,8 @@ Starting audit...
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/StartProgram.java:5:8: Unused import - displays.ErrorDisplay. [UnusedImports]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/StartProgram.java:55:67: '{' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/StartProgram.java:62:13: '}' at column 13 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
+[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/StartProgram.java:74:13: '5' is a magic number. [MagicNumber]
+[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/StartProgram.java:74:17: '3' is a magic number. [MagicNumber]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:1: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:9:28: Using the '.*' form of import should be avoided - java.util.concurrent.*. [AvoidStarImport]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:158: Line is longer than 100 characters (found 108). [LineLength]
@@ -106,4 +108,4 @@ Starting audit...
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/fileio/UserInput.java:254:36: Parameter genre should be final. [FinalParameters]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Main.java:13:5: Missing a Javadoc comment. [MissingJavadocMethod]
 Audit done.
-Checkstyle ends with 106 errors.
+Checkstyle ends with 108 errors.

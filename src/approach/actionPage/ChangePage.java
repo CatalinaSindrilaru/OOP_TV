@@ -112,6 +112,8 @@ public class ChangePage implements ActionPage {
                     MovieInput movie = currentPage.findMovie(actionInput.getMovie());
                     if (movie == null) {
                         ErrorDisplay.displayError(output);
+//                        currentPage.getOldPages().push(new CurrentPage(currentPage)); // adaugat
+
                     } else {
                         currentPage.clearCurrentMoviesList();
                         currentPage.getCurrentMovieList().add(movie);
