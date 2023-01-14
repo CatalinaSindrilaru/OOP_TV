@@ -1,5 +1,10 @@
 package approach.actionPage;
 
+import approach.actionPage.mainActions.BackAction;
+import approach.actionPage.mainActions.ChangePage;
+import approach.actionPage.mainActions.DatabaseAction;
+import approach.actionPage.mainActions.OnPage;
+
 /**
  *  Class that implements Factory Design Pattern for actions
  */
@@ -14,10 +19,13 @@ public class ActionFactory {
 
         if (type.compareTo("change page") == 0) {
             return new ChangePage();
+
         } else if (type.compareTo("on page") == 0) {
             return new OnPage();
+
         } else if (type.compareTo("database") == 0) {
             return new DatabaseAction();
+
         } else {
             return new BackAction();
         }

@@ -19,7 +19,7 @@ public class Notification {
     /**
      * @param movieName new value
      */
-    public void setMovieName(String movieName) {
+    public void setMovieName(final String movieName) {
         this.movieName = movieName;
     }
 

@@ -1,6 +1,7 @@
-package approach.actionPage;
+package approach.actionPage.mainActions;
 
 import approach.CurrentPage;
+import approach.actionPage.ActionPage;
 import approach.events.Event;
 import approach.events.EventsFactory;
 import com.fasterxml.jackson.databind.node.ArrayNode;

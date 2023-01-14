@@ -2,7 +2,6 @@ package fileio;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Class that contains information about a movie
@@ -203,7 +202,7 @@ public class MovieInput {
      * @param user user to verify
      * @return true/false
      */
-    public boolean bannedForUser(UserInput user) {
+    public boolean bannedForUser(final UserInput user) {
         String country = user.getCredentials().getCountry();
         return countriesBanned.contains(country);
     }

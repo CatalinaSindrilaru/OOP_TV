@@ -1,6 +1,7 @@
-package approach.actionPage;
+package approach.actionPage.mainActions;
 
 import approach.CurrentPage;
+import approach.actionPage.ActionPage;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import displays.DisplayCommand;
 import displays.ErrorDisplay;
@@ -45,6 +46,7 @@ public class BackAction implements ActionPage {
 
             oldPages.pop();
             newPage = oldPages.peek().getPageName();
+
             if (oldPages.isEmpty()) {
                 ErrorDisplay.displayError(output);
                 return currentPage;
@@ -54,7 +56,8 @@ public class BackAction implements ActionPage {
                 currentPage = new CurrentPage(oldPages.peek());
                 return currentPage;
 
-            } else if (newPage.compareTo("login") == 0 || newPage.compareTo("register") == 0) {
+            } else if (newPage.compareTo("login") == 0
+                    || newPage.compareTo("register") == 0) {
                 ErrorDisplay.displayError(output);
                 currentPage = new CurrentPage(oldPages.peek());
                 return currentPage;

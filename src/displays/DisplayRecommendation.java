@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.UserInput;
 
-public class DisplayRecommendation {
+public final class DisplayRecommendation {
 
     private DisplayRecommendation() {
 

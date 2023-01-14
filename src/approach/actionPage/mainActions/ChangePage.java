@@ -1,5 +1,6 @@
-package approach.actionPage;
+package approach.actionPage.mainActions;
 
+import approach.actionPage.ActionPage;
 import displays.DisplayCommand;
 import approach.CurrentPage;
 import approach.pages.Errors;

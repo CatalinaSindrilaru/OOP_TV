@@ -71,7 +71,6 @@ public class Input {
      */
     public void addUser(final UserInput user) {
         users.add(user);
-//        databaseNotifications.put(user.getCredentials().getName(), new ArrayList<String>());
     }
 
     /**

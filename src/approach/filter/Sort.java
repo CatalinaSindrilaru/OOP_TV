@@ -1,4 +1,4 @@
-package approach.filters;
+package approach.filter;
 
 import fileio.FiltersSort;
 import fileio.MovieInput;

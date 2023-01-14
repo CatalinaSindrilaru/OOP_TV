@@ -1,23 +1,16 @@
 Starting audit...
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/displays/DisplayRecommendation.java:8:1: Class DisplayRecommendation should be declared as final. [FinalClass]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:1: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:9:28: Using the '.*' form of import should be avoided - java.util.concurrent.*. [AvoidStarImport]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:158: Line is longer than 100 characters (found 108). [LineLength]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:206:65: Parameter testFileName should be final. [FinalParameters]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Test.java:222: Line is longer than 100 characters (found 108). [LineLength]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/filters/Filter.java:12:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/filter/Filter.java:13:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/ActionPage.java:12:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/Recommendation.java:10:17: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/Recommendation.java:12:1: Class Recommendation should be declared as final. [FinalClass]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/BackAction.java:23:39: Parameter currentPage should be final. [FinalParameters]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/DatabaseAction.java:104:5: Class 'DatabaseAction' looks like designed for extension (can be subclassed), but the method 'searchInList' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'DatabaseAction' final or making the method 'searchInList' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/DatabaseAction.java:104:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/Notification.java:22:30: Parameter movieName should be final. [FinalParameters]
+[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/actionPage/mainActions/BackAction.java:24:39: Parameter currentPage should be final. [FinalParameters]
+[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/CurrentPage.java:3:23: Using the '.*' form of import should be avoided - approach.filter.*. [AvoidStarImport]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/CurrentPage.java:30:24: Parameter currentPage should be final. [FinalParameters]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/approach/pages/Errors.java:12:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/fileio/ActionInput.java:173:5: Class 'ActionInput' looks like designed for extension (can be subclassed), but the method 'getSubscribedGenre' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'ActionInput' final or making the method 'getSubscribedGenre' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/fileio/MovieInput.java:5:8: Unused import - java.util.Map. [UnusedImports]
-[ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/fileio/MovieInput.java:206:34: Parameter user should be final. [FinalParameters]
 [ERROR] /home/catalina/Desktop/OOP_TV_Stage2/./src/Main.java:13:5: Missing a Javadoc comment. [MissingJavadocMethod]
 Audit done.
-Checkstyle ends with 20 errors.
+Checkstyle ends with 13 errors.

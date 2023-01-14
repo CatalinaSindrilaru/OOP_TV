@@ -170,6 +170,9 @@ public class ActionInput {
         this.movie = movie;
     }
 
+    /**
+     * @return subscribedGenre
+     */
     public String getSubscribedGenre() {
         return subscribedGenre;
     }

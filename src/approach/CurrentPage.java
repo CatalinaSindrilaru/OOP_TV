@@ -1,8 +1,7 @@
 package approach;
 
-import approach.filters.Filter;
-import approach.filters.FiltersFactory;
-import approach.filters.Sort;
+import approach.filter.*;
+import approach.filter.Sort;
 import fileio.UserInput;
 import fileio.MovieInput;
 import fileio.Input;
@@ -22,6 +21,7 @@ public final class CurrentPage {
     private ArrayList<MovieInput> currentMovieList = new ArrayList<>();
 
     private Stack<CurrentPage> oldPages;
+
 
     public CurrentPage() {
         oldPages = new Stack<CurrentPage>();
@@ -110,21 +110,7 @@ public final class CurrentPage {
     public void filterMoviesList(final ActionInput actionInput) {
 
         if (actionInput.getFilters().getContains() != null) {
-
-            FiltersFactory filtersFactory = new FiltersFactory();
-            Filter filter;
-
-            /* Delete the movies that do not contain these actors */
-            if (actionInput.getFilters().getContains().getActors() != null) {
-                filter = filtersFactory.createFilter("actors");
-                filter.filter(currentMovieList, actionInput);
-            }
-
-            /* Delete the movies that do not have these genres */
-            if (actionInput.getFilters().getContains().getGenre() != null) {
-                filter = filtersFactory.createFilter("genres");
-                filter.filter(currentMovieList, actionInput);
-            }
+            Filter.filterContains(this, actionInput.getFilters().getContains());
         }
 
         /* Sort the movies */

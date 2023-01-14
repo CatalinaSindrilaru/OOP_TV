@@ -9,7 +9,7 @@ import fileio.UserInput;
 
 import java.util.*;
 
-public class Recommendation {
+public final class Recommendation {
 
     private Recommendation() {
 
